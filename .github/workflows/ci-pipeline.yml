@@ -13,4 +13,17 @@ jobs:
           dotnet-version: "8.0"
       - name: Build code
         run: dotnet build
+      - name: Run dotnet tests
+        run: dotnet test
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "21.5"
+      - run: cd DotnetTemplate.Web
+      - name: Install npm packages
+        run: npm ci
+      - name: Build Typescript code
+        run: npm build
+      - name: Run Typescript Tests
+        run: npm t
 
