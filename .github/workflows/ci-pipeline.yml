@@ -19,11 +19,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "21.5"
-      - run: cd DotnetTemplate.Web
       - name: Install npm packages
         run: npm ci
+        working-directory: DotnetTemplate.Web
       - name: Build Typescript code
         run: npm build
+        working-directory: DotnetTemplate.Web
       - name: Run Typescript Tests
         run: npm t
+        working-directory: DotnetTemplate.Web
 
