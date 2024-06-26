@@ -23,7 +23,7 @@ jobs:
         run: npm ci
         working-directory: DotnetTemplate.Web
       - name: Build Typescript code
-        run: npm build
+        run: npm run build
         working-directory: DotnetTemplate.Web
       - name: Run Typescript Tests
         run: npm t
